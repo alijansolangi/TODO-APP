@@ -12,7 +12,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $data = task::all();
+        $data = task::all()->where('user_id', auth()->id());
         return view('welcome', compact('data'));
     }
 
@@ -33,7 +33,11 @@ class TaskController extends Controller
             'task' => 'required',
             'des' => 'required',
         ]);
-        task::create($request->all());
+        task::create([
+            'task' => $request->task,
+            'des' => $request->des, 
+            'user_id' => auth()->id(),
+        ]);
         return redirect()->route('index')->with('success', 'Data Created Successfully!');
     }
 

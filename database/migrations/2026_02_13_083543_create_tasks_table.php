@@ -13,7 +13,9 @@ return new class extends Migration
     {
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
-            $table->text('task');
+            $table->text('task');$table->foreignId('user_id')
+                ->constrained()
+                ->cascadeOnDelete();
             $table->text('des');
             $table->integer('com')->default(0);
             $table->integer('fav')->default(0);

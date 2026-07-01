@@ -10,7 +10,12 @@ class task extends Model
         'task',
         'des',
         'status',
+        'user_id',
         'com',
         'fav',
     ];
+    public function user()
+    {
+        return $this->blongsto(User::class);
+    }
 }
