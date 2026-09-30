@@ -131,7 +131,7 @@
         <!-- Header with Login/Profile Logic -->
         <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
             <h2 class="fw-bold">📝 Task Manager</h2>
-            
+
             <div class="d-flex align-items-center gap-3 flex-wrap">
                 <!-- New Task Button -->
                 <a href="{{ route('create') }}" class="btn btn-light btn-lg shadow">
@@ -144,7 +144,7 @@
                     <div class="profile-pill">
                         <img src="https://ui-avatars.com/api/?name={{ Auth::user()->name }}&background=1a2b4a&color=fff&size=40" alt="avatar" />
                         <span class="fw-semibold" style="font-size: 0.95rem; color: #1a2b4a;">{{ Auth::user()->name }}</span>
-                        <a href="{{ route('logout') }}" class="text-secondary ms-1 icon-btn" style="font-size: 1.1rem;" 
+                        <a href="{{ route('logout') }}" class="text-secondary ms-1 icon-btn" style="font-size: 1.1rem;"
                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();" title="Logout">
                             <i class="bi bi-box-arrow-right"></i>
                         </a>

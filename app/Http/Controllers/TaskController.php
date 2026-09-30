@@ -35,7 +35,7 @@ class TaskController extends Controller
         ]);
         task::create([
             'task' => $request->task,
-            'des' => $request->des, 
+            'des' => $request->des,
             'user_id' => auth()->id(),
         ]);
         return redirect()->route('index')->with('success', 'Data Created Successfully!');
